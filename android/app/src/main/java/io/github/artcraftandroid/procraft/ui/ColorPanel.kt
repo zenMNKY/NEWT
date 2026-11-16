@@ -1566,7 +1566,7 @@ private fun CompactValueRow(letter: String, value: Float, colours: List<Color>, 
 @Composable
 private fun ValueGroup(modifier: Modifier = Modifier, short: Boolean = false, count: Int = 3, rows: @Composable () -> Unit) {
     // short, the rows are 51 apart instead of 53; a fourth row takes one more
-    val extra = (count - 3) * (if (short) 51.dp else 53.dp)
+    val extra = (if (short) 51.dp else 53.dp) * (count - 3)
     if (short) ValueGroup(modifier, 151.dp + extra, 7.dp, 3.dp, rows) else ValueGroup(modifier, 167.dp + extra, 9.dp, 9.dp, rows)
 }
 
